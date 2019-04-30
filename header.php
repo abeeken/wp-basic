@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
         <link rel="stylesheet" href="style.css">
-        <title>Title</title>
+        <title><?php echo get_bloginfo( 'name' ); ?></title>
         <?php wp_head(); ?>
     </head>
     <body>
@@ -15,17 +15,12 @@
         <header class="container">
             <div class="row jumbotron">
                 <div class="col">
-                    <h1><a href="<?php echo get_site_url(); ?>">Interaction Log</a></h1>
+                    <h1><a href="<?php echo get_site_url(); ?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
                 </div>
             </div>
         </header>
 
         <nav class="container navbar navbar-light bg-light navbar-expand-lg mb-3">
-
-            <a class="navbar-brand" href="<?php echo home_url() ?>">
-                <?php echo $custom_logo ?>
-            </a>
-
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
