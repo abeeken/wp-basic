@@ -1,2 +1,2 @@
 // Declare globals
-var globalVar = "FOO";
+var globalVar = "BAR";

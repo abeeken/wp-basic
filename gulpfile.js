@@ -62,3 +62,8 @@ gulp.task('makezip', function(){
 });
 
 gulp.task('build', gulp.series('clean', 'sass', 'minicss', 'js', 'makedist', 'makezip'), function(){});
+
+gulp.task('watch', function(){
+    gulp.watch('sass/*.scss', gulp.series('sass','minicss'));
+    gulp.watch('js/parts/*.js', gulp.series('js'));
+});

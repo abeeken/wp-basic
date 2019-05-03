@@ -1,1 +1,1 @@
-var globalVar="FOO";$(document).ready(function(){console.log(globalVar)});
+var globalVar="BAR";$(document).ready(function(){console.log(globalVar)});
