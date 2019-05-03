@@ -4,4 +4,7 @@
 
     // Nav Menus
     require_once get_template_directory() . '/fns/nav.php';
+
+    // Styles and scripts
+    require_once get_template_directory() . '/fns/styles.php';
 ?>
