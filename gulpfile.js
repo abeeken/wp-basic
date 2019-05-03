@@ -1,13 +1,26 @@
+var distname = "wp-basic";
+
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var cssnano = require('gulp-cssnano');
 var rename = require('gulp-rename');
 var jsnano = require('gulp-minify');
 var concat = require('gulp-concat');
+var del = require('del');
+var zip = require('gulp-zip');
 
 var jsfiles =[
     'js/parts/globals.js',
     'js/parts/scripts.js'
+];
+
+var sourcefiles = [
+    '*.php',
+    'style.css',
+    'css/**/*',
+    'fns/**/*',
+    'parts/**/*',
+    'js/*'
 ];
 
 gulp.task('sass', function(){
@@ -32,3 +45,20 @@ gulp.task('js', function(){
         .pipe(jsnano())
         .pipe(gulp.dest('js'))
 });
+
+gulp.task('clean', function () {
+    return del('dist/**/*');
+});
+
+gulp.task('makedist', function(){
+    return gulp.src(sourcefiles,{ base: '.' })
+        .pipe(gulp.dest('dist/'+distname))
+});
+
+gulp.task('makezip', function(){
+    return gulp.src('dist/'+distname+'/*')
+        .pipe(zip(distname+'.zip'))
+        .pipe(gulp.dest('dist'))
+});
+
+gulp.task('build', gulp.series('clean', 'sass', 'minicss', 'js', 'makedist', 'makezip'), function(){});
