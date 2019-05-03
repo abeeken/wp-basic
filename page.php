@@ -13,6 +13,7 @@
                     get_template_part( 'parts/content', 'none' );
                 endif;
 			?>
+            <?php comments_template(); ?>
         </div>
     </div>
 </div>
