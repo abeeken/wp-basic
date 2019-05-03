@@ -7,4 +7,5 @@
 
     // Styles and scripts
     require_once get_template_directory() . '/fns/styles.php';
+    require_once get_template_directory() . '/fns/scripts.php';
 ?>
