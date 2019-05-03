@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="container page">
-    <div class="row">
+    <div class="row">        
         <div class="col">
             <?php
                 if ( have_posts() ) :
@@ -19,6 +19,9 @@
                 endif;
             ?>
         </div>
+        <?php
+            do_sidebar("primary-sidebar", "col-3");
+        ?>
     </div>
 </div>
 
