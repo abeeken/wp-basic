@@ -6,7 +6,14 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-        <title><?php echo get_bloginfo( 'name' ); ?></title>
+        <title>
+            <?php echo get_bloginfo( 'name' ); ?>
+            <?php 
+                if(is_single()){
+                    echo " - ".get_the_title(get_the_ID());
+                }
+            ?>
+        </title>
         <?php wp_head(); ?>
     </head>
     <body>
