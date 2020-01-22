@@ -31,17 +31,16 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <?php
-                    wp_nav_menu( array(
-                        'theme_location'  => 'primary',
-                        'depth'           => 2,
-                        'container'       => 'div',
-                        'container_class' => 'collapse navbar-collapse',
-                        'menu_class'      => 'nav navbar-nav',
-                        'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-                        'walker'          => new WP_Bootstrap_Navwalker()
-                    ) );
-                ?>
-            </div>
+            <?php
+                wp_nav_menu( array(
+                    'theme_location'  => 'primary',
+                    'depth'           => 2,
+                    'container'       => 'div',
+                    'container_class' => 'collapse navbar-collapse',
+                    'container_id'    => 'navbarNavDropdown',
+                    'menu_class'      => 'nav navbar-nav',
+                    'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker'          => new WP_Bootstrap_Navwalker()
+                ) );
+            ?>
         </nav>
